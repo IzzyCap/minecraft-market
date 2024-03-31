@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --black: #222;
+    --grey: #333;
+    --white: #f1f1f1;
+    --border: #555;
+  }
+ 
+  .dark {
+    --black: #222;
+    --grey: #333;
+    --white: #f1f1f1;
+    --border: #555;
+  }
+
+  * {
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  .main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8rem;
+  }
+
+  .input, button {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.50rem;
+    padding-bottom: 0.50rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--border);
+  }
+
+  .margin-input {
+    margin-bottom: 1.25rem;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

@@ -1,0 +1,19 @@
+.btn {
+  text-decoration: none;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 500;
+  font-size: 0.8em;
+  color: var(--white);
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.btn:hover,
+.btn:active {
+  text-shadow: 0 0 .65px var(--white), 0 0 .65px var(--white);
+}
+
+/* .disable {
+
+} */
