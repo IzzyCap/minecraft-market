@@ -4,17 +4,19 @@
  
 @layer base {
   :root {
-    --black: #222;
-    --grey: #333;
+    --black: #141414;
+    --grey: #222;
     --white: #f1f1f1;
     --border: #555;
+    --secondary: #28666e;
   }
  
   .dark {
-    --black: #222;
-    --grey: #333;
+    --black: #141414;
+    --grey: #222;
     --white: #f1f1f1;
     --border: #555;
+    --secondary: #28666e;
   }
 
   * {

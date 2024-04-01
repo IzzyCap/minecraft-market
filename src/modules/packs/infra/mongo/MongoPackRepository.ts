@@ -9,6 +9,8 @@ interface PackDocument extends Document {
     type: string,
     name: string,
     description: string,
+    author: string,
+    banner: string,
   }
 }
 
@@ -16,7 +18,9 @@ const packSchema = new Schema<PackDocument>({
   details: {
     type: { type: String, required: true },
     name: { type: String, required: true },
-    description: { type: String, required: true }
+    description: { type: String, required: true },
+    author: { type: String, required: true },
+    banner: { type: String, required: true }
   }
 })
 

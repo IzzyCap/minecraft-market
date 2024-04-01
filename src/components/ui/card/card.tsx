@@ -13,9 +13,9 @@ export default function Card ({ packInfo }: Props) {
 
   return (
     <>
-      <div className={classes.articleWrapper} onClick={openModal}>
+      <article className={classes.articleWrapper} onClick={openModal}>
         <figure className={classes.banner}>
-          <img src={'https://zonacraft.net/wp-content/uploads/2023/12/super-duper-vanilla-shaders-384x216.webp'} alt="" />
+          <img src={packInfo?.details?.banner} alt="banner" />
         </figure>
         <div className={classes.articleBody}>
           <h2>{packInfo?.details?.name}</h2>
@@ -23,7 +23,7 @@ export default function Card ({ packInfo }: Props) {
             {packInfo?.details?.description}
           </p>
         </div>
-      </div>
+      </article>
     </>
   )
 }

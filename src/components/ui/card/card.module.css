@@ -5,41 +5,40 @@
   --link-icon-opacity: 0;
   position: relative;
   border-radius: 16px;
+  border: 2px solid var(--border);
   box-shadow: none;
-  background: #fff;
   transform-origin: center;
-  transition: all 0.4s ease-in-out;
   overflow: hidden;
   cursor: pointer;
 }
 
 .articleWrapper:has(:hover, :focus) {
-  --img-scale: 1.1;
-  --title-color: #28666e;
-  --link-icon-translate: 0;
-  --link-icon-opacity: 1;
+  border: 2px solid var(--secondary);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
+.articleBody {
+  background-color: var(--grey);
+}
+
 .articleBody h2 {
+  background-color: var(--grey);
   margin: 0 0 18px 0;
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   letter-spacing: 0.06em;
-  color: var(--title-color);
+  color: var(--secondary);
   transition: color 0.3s ease-out;
 }
 
-.modalBody p {
-  margin: 18px;
-  width: 100%;
-  line-height: 1.5em;
-  text-align: left;
-}
-
 .articleBody p {
+  background-color: var(--grey);
   margin-bottom: 18px;
   max-width: 600px;
   line-height: 1.5em;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .banner {
@@ -57,31 +56,6 @@
 
 .articleBody {
   padding: 24px;
-}
-
-.modalWrapper {
-  max-width: 750px;
-}
-
-.modalBanner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modalBanner img{
-  max-height: 400px
-}
-
-.modalBody {
-  padding: 2em;
-}
-
-.modalTitle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: .5em;
 }
 
 .techIcons {
@@ -113,10 +87,3 @@
     height: 100%;
   }
 }
-
-@media (max-width: 750px) {
-  .modalBanner img {
-    width: 100%;
-  }
-}
-

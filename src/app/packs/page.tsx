@@ -1,6 +1,5 @@
-'use client'
 import Card from '@/components/ui/card/card'
-import classes from './shaders.module.css'
+import classes from './packs.module.css'
 import Pack from '@/modules/packs/domain/Pack'
 
 // type Props = {}
@@ -34,8 +33,8 @@ export default async function Packs () { // [TODO] modify to just accept pack ty
 
   return (
     <>
-      <section className={classes.projectWrapper}>
-        <div className={classes.projectsContainer}>
+      <section>
+        <div className={classes.packContainer}>
           {showPacks(packs)}
         </div>
       </section>

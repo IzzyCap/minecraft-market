@@ -1,0 +1,8 @@
+.packContainer {
+  display: grid;
+  max-width: 1200px;
+  margin-inline: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 350px;
+  gap: 24px;
+}
