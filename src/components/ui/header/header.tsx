@@ -19,8 +19,8 @@ export default function Header () {
       {/* Left Section */}
       <div className={classes.menu}>
         <Image
-          src="/icons/burger.svg"
-          alt="Burger Button"
+          src='/icons/burger.svg'
+          alt='Burger Button'
           width={25}
           height={25}
           priority

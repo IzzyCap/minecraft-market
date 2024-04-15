@@ -1,14 +1,17 @@
 'use client'
 import classes from './card.module.css'
 import Pack from '@/modules/packs/domain/Pack'
+import { useRouter } from 'next/navigation'
 
 interface Props {
   packInfo: Pack;
 }
 
 export default function Card ({ packInfo }: Props) {
+  const router = useRouter()
+
   const openModal = () => {
-    console.log('Open Card')
+    router.push('/' + packInfo.details.id)
   }
 
   return (

@@ -1,0 +1,14 @@
+.banner {
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--grey);
+  border: 1px solid var(--border);
+}
+
+.title {
+  padding: 0.6em;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--black);
+}

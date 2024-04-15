@@ -19,6 +19,7 @@
 
 .articleBody {
   background-color: var(--grey);
+  height: 100%;
 }
 
 .articleBody h2 {

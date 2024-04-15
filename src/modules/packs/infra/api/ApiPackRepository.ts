@@ -2,23 +2,28 @@ import Pack from '../../domain/Pack'
 import PackDetails from '../../domain/PackDetails'
 import PackRepository from '../../domain/PackRepository'
 
-class PackRepositoryApi implements PackRepository {
+class ApiPackRepository implements PackRepository {
   async getById (packId: string): Promise<Pack | null> {
-    const response = await fetch(`${process.env.URL}/packs/${packId}`)
+    const response = await fetch(`${process.env.URL}/api/packs/${packId}`)
     const pack = await response.json()
-
     return pack
   }
 
   async getAll (): Promise<Pack[]> {
-    const response = await fetch(`${process.env.URL}/packs`)
-    const packs = await response.json()
+    const response = await fetch(`${process.env.URL}/api/packs`)
+    const users = await response.json()
+    return users
+  }
 
-    return packs
+  async getByType (type: string, currentPage: number, elementsByPage: number): Promise<Pack[]> {
+    const response = await fetch(
+      `${process.env.URL}/api/packs?type=${type}&currentPage=${currentPage}&elementsByPage=${elementsByPage}`
+    )
+    return response.json()
   }
 
   async create (packData: PackDetails): Promise<Pack> {
-    const response = await fetch(`${process.env.URL}/pack`, {
+    const response = await fetch(`${process.env.URL}/api/pack`, {
       method: 'POST',
       body: JSON.stringify(
         packData
@@ -42,4 +47,4 @@ class PackRepositoryApi implements PackRepository {
   }
 }
 
-export default PackRepositoryApi
+export default ApiPackRepository

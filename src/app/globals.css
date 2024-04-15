@@ -6,22 +6,27 @@
   :root {
     --black: #141414;
     --grey: #222;
+    --highlight-grey: #343434;
     --white: #f1f1f1;
     --border: #555;
-    --secondary: #28666e;
+    --secondary: #408c96;
   }
  
   .dark {
     --black: #141414;
     --grey: #222;
+    --highlight-grey: #343434;
     --white: #f1f1f1;
     --border: #555;
-    --secondary: #28666e;
+    --secondary: #408c96;
   }
 
   * {
-    background-color: var(--black);
     color: var(--white);
+  }
+
+  body{   
+    background-color: var(--black) !important;
   }
 
   .main-container {

@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import classes from './button.module.css'
 
-interface ButtonProps {
+interface Props {
   // eslint-disable-next-line no-undef
   children: React.ReactNode;
   link?: string;
@@ -10,7 +10,7 @@ interface ButtonProps {
   onClickHandler?: () => void;
 }
 
-export default function Button ({ children, link, enable = true, onClickHandler } : ButtonProps) {
+export default function Button ({ children, link, enable = true, onClickHandler } : Props) {
   if (link) {
     return (
       <Link href={link} className={`${enable ? '' : `${classes.disable}`} ${classes.btn}`}>

@@ -1,0 +1,32 @@
+.container {
+  width: 100%;
+  max-width: 1160px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+.leftColumn {
+  width: 100%;
+  margin-right: 2em;
+}
+
+.packInfo {
+  margin: 2em;
+}
+
+.packInfo h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--secondary)
+}
+
+.rightColumn {
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.description {
+  margin-top: 1em;
+}
