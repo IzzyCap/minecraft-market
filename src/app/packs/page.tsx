@@ -2,8 +2,7 @@ import Card from '@/components/ui/card/card'
 import classes from './packs.module.css'
 import Pack from '@/modules/packs/domain/Pack'
 import ApiPackRepository from '@/modules/packs/infra/api/ApiPackRepository'
-import { getAllPacks } from '@/modules/packs/application/get-all/getAllPacks'
-// import { getPacksByType } from '@/modules/packs/application/get-all/getPacksByType'
+import { getPacksByType } from '@/modules/packs/application/get-all/getPacksByType'
 
 const packRepository = new ApiPackRepository()
 
@@ -18,8 +17,8 @@ function showPacks (packs: Pack[]) {
 }
 
 export default async function Packs () { // [TODO] modify to just accept pack type
-  // const packs = await getPacksByType(packRepository)('Shader', 1, 2)
-  const packs = await getAllPacks(packRepository)()
+  const packs = await getPacksByType(packRepository)('Shader', 1, 8)
+
   return (
     <>
       <section>
