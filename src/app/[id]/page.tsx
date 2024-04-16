@@ -3,27 +3,21 @@ import { notFound } from 'next/navigation'
 import Pack from '@/modules/packs/domain/Pack'
 import Banner from '@/components/ui/banner/banner'
 import List from '@/components/ui/list/list'
+import ApiPackRepository from '@/modules/packs/infra/api/ApiPackRepository'
+import { getPackById } from '@/modules/packs/application/get/getPackById'
 
-const getPack = async (pack: string) => {
-  const res = await fetch(`${process.env.URL}/api/packs/${pack}`, {
-    next: { revalidate: 1 }
-  })
-
-  if (!res.ok) {
-    notFound()
-  }
-  return res.json()
-}
+const packRepository = new ApiPackRepository()
 
 export default async function PackInfo ({
   params: { id }
 } : {
   params : {id: string}
 }) {
-  const packData = await getPack(id)
+  const pack = await getPackById(packRepository)(id) as Pack
 
-  const [pack] = await Promise.all([packData]) as Pack[]
-  console.log(pack)
+  if (!pack) {
+    notFound()
+  }
 
   return (
     <div className={classes.container}>

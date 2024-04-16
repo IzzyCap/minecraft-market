@@ -5,6 +5,11 @@ import PackRepository from '../../domain/PackRepository'
 class ApiPackRepository implements PackRepository {
   async getById (packId: string): Promise<Pack | null> {
     const response = await fetch(`${process.env.URL}/api/packs/${packId}`)
+
+    if (!response.ok) { // [TODO] handle error
+      return null
+    }
+
     const pack = await response.json()
     return pack
   }
