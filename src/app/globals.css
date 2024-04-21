@@ -42,7 +42,13 @@
     padding-top: 0.50rem;
     padding-bottom: 0.50rem;
     border-radius: 0.25rem;
-    border: 1px solid var(--border);
+    font-weight: bold;
+    border: 2px solid var(--border)
+  }
+
+  .input, button:hover {
+    border: 2px solid var(--secondary);
+    color: var(--secondary)
   }
 
   .margin-input {

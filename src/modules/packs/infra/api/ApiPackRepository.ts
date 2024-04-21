@@ -4,7 +4,7 @@ import PackRepository from '../../domain/PackRepository'
 
 class ApiPackRepository implements PackRepository {
   async getById (packId: string): Promise<Pack | null> {
-    const response = await fetch(`${process.env.URL}/api/packs/${packId}`)
+    const response = await fetch(`${process.env.URL || ''}/api/packs/${packId}`)
 
     if (!response.ok) { // [TODO] handle error
       return null
@@ -15,20 +15,20 @@ class ApiPackRepository implements PackRepository {
   }
 
   async getAll (): Promise<Pack[]> {
-    const response = await fetch(`${process.env.URL}/api/packs`)
+    const response = await fetch(`${process.env.URL || ''}/api/packs`)
     const users = await response.json()
     return users
   }
 
   async getByType (type: string, currentPage: number, elementsByPage: number): Promise<Pack[]> {
     const response = await fetch(
-      `${process.env.URL}/api/packs?type=${type}&currentPage=${currentPage}&elementsByPage=${elementsByPage}`
+      `${process.env.URL || ''}/api/packs?type=${type}&currentPage=${currentPage}&elementsByPage=${elementsByPage}`
     )
     return response.json()
   }
 
   async create (packData: PackDetails): Promise<Pack> {
-    const response = await fetch(`${process.env.URL}/api/pack`, {
+    const response = await fetch(`${process.env.URL || ''}/api/pack`, {
       method: 'POST',
       body: JSON.stringify(
         packData

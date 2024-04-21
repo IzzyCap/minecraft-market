@@ -43,7 +43,7 @@ class MongoPackRepository implements PackRepository {
 
   async getByType (type: string, currentPage: number, elementsByPage: number): Promise<Pack[]> {
     const skip = (currentPage - 1) * elementsByPage
-    const packs = await PackModel.find({ 'details.type': type })
+    const packs = await PackModel.find({ 'details.type': type.toLocaleLowerCase() })
       .skip(skip)
       .limit(elementsByPage)
     return packs.map((pack) => pack.toObject())

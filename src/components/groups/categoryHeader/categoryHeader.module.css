@@ -1,0 +1,12 @@
+.typeHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+
+.typeHeader h2 {
+  font-size: 1.4em;
+  font-weight: bold;
+  padding-right: 1.2em;
+}
